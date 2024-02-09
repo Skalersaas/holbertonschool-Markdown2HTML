@@ -11,18 +11,14 @@ def Heading(line):
     helper = "<H"+str(count)+">"
     return helper+line[count:]+helper.replace("<","</")
 
-def UL(lines, i):
-    ul = "<ul>\n"
-    count = 0 
-    for j in range(i,len(lines)):
-        line = lines[j]
+def UL(lines):
+    html = "<ul>"
+    for line in lines:
         if(line[0]=="-"):
-            count+=1
-            ul+="<li>"+line[1:]+"</li>\n"
-        else: 
-            break
-    ul+="</ul>"
-    return (ul,count)
+            html += "<li>"+line[:1]+"</li>"
+            lines.remove(line)
+        else: break
+    html += "</ul>"
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -37,13 +33,14 @@ if __name__ == "__main__":
         with open(sys.argv[2],'w') as HTML:
             lines = MD.read()
             html = ""
+
+            UL = False
             for i in range(len(lines)):
                 line = lines[i]
                 if(line[0]=="#"):
-                    html+=Heading(line)
+                    html += Heading(line)
                 if(line[0]=="-"):
-                    tup = UL(lines[i:],i)
-                    html += tup[0]
-                    i += tup[1]
+                    html += UL(lines[i:])
+
             HTML.write(html)
     exit(0)
