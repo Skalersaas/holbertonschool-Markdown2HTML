@@ -34,8 +34,6 @@ if __name__ == "__main__":
         with open(sys.argv[2],'w') as HTML:
             lines = MD.read()
             html = ""
-
-            UL = False
             for i in range(len(lines)):
                 line = lines[i]
                 if(line[0]=="#"):
