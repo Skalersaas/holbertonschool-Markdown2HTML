@@ -19,6 +19,7 @@ def UL(lines):
             lines.remove(line)
         else: break
     html += "</ul>"
+    return html
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
