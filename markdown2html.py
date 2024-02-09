@@ -14,7 +14,8 @@ def Heading(line):
 def UL(lines, i):
     ul = "<ul>\n"
     count = 0 
-    for line in lines:
+    for j in range(i,len(lines)):
+        line = lines[j]
         if(line[0]=="-"):
             count+=1
             ul+="<li>"+line[1:]+"</li>\n"
@@ -43,6 +44,6 @@ if __name__ == "__main__":
                 if(line[0]=="-"):
                     tup = UL(lines[i:])
                     html += tup[0]
-                    i+=tup[1]
+                    i += tup[1]
             HTML.write(html)
     exit(0)
