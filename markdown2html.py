@@ -42,7 +42,7 @@ if __name__ == "__main__":
                 if(line[0]=="#"):
                     html+=Heading(line)
                 if(line[0]=="-"):
-                    tup = UL(lines[i:])
+                    tup = UL(lines[i:],i)
                     html += tup[0]
                     i += tup[1]
             HTML.write(html)
