@@ -30,7 +30,7 @@ if __name__ == "__main__":
     with open(sys.argv[1]) as MD:
         with open(sys.argv[2],'w') as HTML:
             html = ""
-            for i in range (len(MD)):
+            for i in range (enumerate(MD)):
                 line = MD[i]
                 if(line[0]=="#"):
                     html+=Heading(line[i])
