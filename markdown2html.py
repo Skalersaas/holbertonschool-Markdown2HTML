@@ -36,6 +36,8 @@ if __name__ == "__main__":
             html = ""
             for i in range(len(lines)):
                 line = lines[i]
+                if(line==""):
+                    break
                 if(line[0]=="#"):
                     html += Heading(line)
                 if(line[0]=="-"):
