@@ -8,8 +8,9 @@ import sys
 import os
 def Heading(line):
     count = line.count("#")
-    helper = "<H"+count+">"
+    helper = "<H"+str(count)+">"
     return helper+line[count:]+helper.replace("<","</")
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
