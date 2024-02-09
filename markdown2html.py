@@ -6,9 +6,22 @@ Second argument is the output file name """
 
 import sys
 import os
+def Heading(line):
+    count = line.count('#')
+    return "<H"+str(count)+">"+line[count:]+"</H"+str(count)+">"
+
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        sys.stderr.write("Usage: ./markdown2html.py README.md README.html\n")
+        text = open("README.md","r")
+        lines = text.splitlines()
+        HTML = ""
+        
+        for line in lines:
+            if(line[0]=='#'):
+                HTML += Heading(line)
+
+        htmlfile = open("README.md","w")
+        htmlfile.write(HTML)
         exit(1)
     if not os.path.exists(sys.argv[1]):
         sys.stderr.write("Missing " + sys.argv[1] + "\n")
