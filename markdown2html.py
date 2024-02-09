@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     with open(sys.argv[1]) as MD:
         with open(sys.argv[2],'w') as HTML:
-            lines = MD.read()
+            lines = MD.read().splitlines()
             html = ""
             for i in range(len(lines)):
                 line = lines[i]
