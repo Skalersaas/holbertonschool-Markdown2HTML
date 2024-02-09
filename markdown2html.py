@@ -12,7 +12,7 @@ def Heading(line):
 
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        text = open("README.md","r")
+        text = open(sys.argv[1],"r")
         lines = text.splitlines()
         HTML = ""
         
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             if(line[0]=='#'):
                 HTML += Heading(line)
 
-        htmlfile = open("README.md","w")
+        htmlfile = open(sys.argv[2],"w")
         htmlfile.write(HTML)
         exit(1)
     if not os.path.exists(sys.argv[1]):
