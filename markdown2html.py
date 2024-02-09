@@ -30,11 +30,12 @@ if __name__ == "__main__":
     with open(sys.argv[1]) as MD:
         with open(sys.argv[2],'w') as HTML:
             html = ""
-            for i, line in MD:
+            i = 0
+            for line in MD:
                 if(line[0]=="#"):
-                    html+=Heading(line[i])
+                    html+=Heading(line)
                 if(line[0]=="-"):
                     html+=UL(MD.splitlines()[i:])
-
+                i+=1
             HTML.write(html)
     exit(0)
