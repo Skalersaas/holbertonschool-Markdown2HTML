@@ -5,6 +5,7 @@ First argument is the name of the Markdown file
 Second argument is the output file name """
 
 import sys
+import os
 import hashlib
 import re
 
