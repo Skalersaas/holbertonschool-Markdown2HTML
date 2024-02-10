@@ -91,11 +91,11 @@ if __name__ == "__main__":
                 if(line == ""):
                     lines.remove(line)
                 else:
-                    line2 = Bold(Em(SQ_brackets(Brackets(line))))
+                    line = Bold(Em(SQ_brackets(Brackets(line))))
                     
                     if(line[0]=="#"):
-                        html += Heading(line2)
-                        lines.remove(line)
+                        html += Heading(line)
+                        del lines[0]
                     elif(line[0]=='-'):
                         L = GetLines(lines,'-')
                         html += UO_List(L,"ul")        
