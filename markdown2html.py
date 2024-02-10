@@ -94,7 +94,7 @@ if __name__ == "__main__":
                     line = Bold(Em(SQ_brackets(Brackets(line))))
                     
                     if(line[0]=="#"):
-                        html += Heading(line)
+                        html += Heading(line2)
                         lines.remove(line)
                     elif(line[0]=='-'):
                         L = GetLines(lines,'-')
