@@ -91,7 +91,7 @@ if __name__ == "__main__":
                 if(line == ""):
                     lines.remove(line)
                 else:
-                    line = Bold(Em(SQ_brackets(Brackets(line))))
+                    line2 = Bold(Em(SQ_brackets(Brackets(line))))
                     
                     if(line[0]=="#"):
                         html += Heading(line2)
